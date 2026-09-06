@@ -1,0 +1,66 @@
+# SupplyDrop uses MiniMessage formatting for all messages.
+# Coordinates are relative to the configured center, not the world spawn.
+world: world
+area:
+  center-x: 0
+  center-z: 0
+  radius: 500
+  search-attempts: 40
+drop:
+  height: 35
+  fall-speed: 0.15
+  lifetime-seconds: 300
+  # Set to 0 to disable automatic drops. The first drop waits this interval.
+  interval-seconds: 900
+  particles: true
+  sounds: true
+loot:
+  title: '<dark_gray>Supply crate'
+  rolls: 6
+  # Each roll picks one entry by relative weight. Entries can repeat.
+  # Amounts must fit in one stack of the selected material.
+  entries:
+    iron:
+      material: IRON_INGOT
+      weight: 40
+      min: 4
+      max: 12
+    gold:
+      material: GOLD_INGOT
+      weight: 25
+      min: 2
+      max: 8
+    diamonds:
+      material: DIAMOND
+      weight: 12
+      min: 1
+      max: 3
+    apples:
+      material: GOLDEN_APPLE
+      weight: 8
+      min: 1
+      max: 2
+    pearls:
+      material: ENDER_PEARL
+      weight: 15
+      min: 2
+      max: 6
+messages:
+  prefix: '<gold>SupplyDrop <dark_gray>» <reset>'
+  started: '<yellow>A supply crate is falling at <white><x>, <y>, <z></white> in <white><world></white>.'
+  landed: '<green>The supply crate has landed at <white><x>, <y>, <z></white> in <white><world></white>.'
+  expired: '<gray>The supply crate has expired.'
+  emptied: '<gray>The supply crate has been emptied.'
+  searching: '<gray>Looking for a safe drop location...'
+  busy: '<red>A supply drop is already active or being placed.'
+  no-location: '<red>No safe drop location was found. Check the world and drop area.'
+  unknown-world: '<red>That world is not loaded.'
+  stopped: '<gray>The supply drop was stopped.'
+  idle: '<gray>There is no active supply drop.'
+  status-searching: '<gray>A drop location is being selected.'
+  status-falling: '<yellow>A crate is falling at <x>, <y>, <z> in <world>.'
+  status-landed: '<green>A crate is available at <x>, <y>, <z> in <world>.'
+  reloaded: '<green>SupplyDrop configuration reloaded. Active drops keep their settings.'
+  reload-failed: '<red>Configuration was rejected. Previous settings are still active. Check the console.'
+  no-permission: '<red>You do not have permission to manage supply drops.'
+  usage: '<gray>Usage: /supplydrop <white>start [world] | stop | status | reload'

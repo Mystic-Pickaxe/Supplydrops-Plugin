@@ -1,0 +1,14 @@
+name: SupplyDrop
+version: '${project.version}'
+main: mystic.supplydrop.SupplyDropPlugin
+api-version: '1.21'
+description: Falling supply crates with shared randomized loot.
+commands:
+  supplydrop:
+    description: Manage the active supply drop.
+    usage: /supplydrop <start [world]|stop|status|reload>
+    aliases: [sd]
+permissions:
+  supplydrop.admin:
+    description: Start, stop, inspect and reload supply drops.
+    default: op
